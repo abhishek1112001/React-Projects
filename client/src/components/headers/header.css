@@ -1,0 +1,148 @@
+header {
+  min-height: 70px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 100;
+}
+
+header .logo h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+header .logo a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease-in-out;
+}
+
+header .logo a:hover {
+  color: #ff4757;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+}
+
+header ul li {
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #555;
+  transition: all 0.3s ease-in-out;
+}
+
+header ul li:hover {
+  color: #ff4757;
+  transform: scale(1.05);
+}
+
+header ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header ul li:hover a {
+  color: #ff4757;
+}
+
+.menu {
+  display: none;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-icon span {
+  background-color: crimson;
+  border-radius: 50%;
+  color: white;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-icon a {
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+.cart-icon a:hover {
+  color: #ff4757;
+}
+
+/* Hover effects for icons */
+.menu svg,
+.cart-icon svg {
+  transition: color 0.3s ease-in-out;
+}
+
+.menu:hover svg,
+.cart-icon:hover svg {
+  color: #ff4757;
+}
+
+/* Responsive menu for mobile view */
+@media screen and (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+  }
+
+  ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+  }
+
+  ul li:hover {
+    background-color: #f8f8f8;
+  }
+
+  .menu.active + ul {
+    display: flex;
+  }
+
+  .cart-icon {
+    margin-top: 15px;
+  }
+}
